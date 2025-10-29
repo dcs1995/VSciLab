@@ -1,0 +1,201 @@
+/* Base Styles & Typography */
+:root {
+    --primary-color: #0077b6; /* A clean blue */
+    --secondary-color: #00b4d8; /* Lighter blue */
+    --background-color: #0d1b2a; /* Dark background */
+    --text-color: #e0fbfc; /* Light text */
+    --card-bg: #1b263b; /* Slightly lighter dark for cards */
+    --font-family: 'Roboto', sans-serif;
+    --border-radius: 8px;
+}
+/* LIGHT MODE COLORS */
+body.light-mode {
+    --primary-color: #3f51b5; /* A standard blue */
+    --secondary-color: #7986cb; /* Lighter shade */
+    --background-color: #f0f0f5; /* Light background */
+    --text-color: #333333; /* Dark text */
+    --card-bg: #ffffff; /* White cards */
+}
+
+/* Ensure elements inherit colors in light mode */
+body.light-mode #main-header,
+body.light-mode .project-card,
+body.light-mode .skills-section {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--primary-color);
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Global Container */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5em;
+}
+
+/* --- HEADER & NAVIGATION --- */
+
+#main-header {
+    background: var(--card-bg);
+    border-bottom: 3px solid var(--primary-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+#main-header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#main-header nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+#main-header nav ul li a:hover {
+    color: var(--secondary-color);
+}
+
+/* --- BUTTONS --- */
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    font-weight: 700;
+    margin-top: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn.primary {
+    background: var(--primary-color);
+    color: var(--text-color);
+}
+
+.btn.primary:hover {
+    background: var(--secondary-color);
+}
+
+.btn.secondary {
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.btn.secondary:hover {
+    background: var(--secondary-color);
+    color: var(--background-color);
+}
+
+/* --- HERO SECTION --- */
+
+#hero {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, var(--background-color) 0%, #1b263b 100%);
+    padding: 60px 0;
+}
+
+#hero h2 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* --- PROJECTS SECTION --- */
+
+.projects-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-left: 5px solid var(--primary-color);
+}
+
+.project-card h4 {
+    margin-top: 0;
+    color: var(--secondary-color);
+}
+
+/* --- SKILLS SECTION --- */
+
+.skills-section {
+    padding: 40px 0;
+    background: var(--card-bg);
+    text-align: center;
+}
+
+.skills-list {
+    margin-top: 20px;
+}
+
+.skills-list span {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--text-color);
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 700;
+}
+
+/* --- CONTACT & FOOTER --- */
+
+#contact {
+    padding: 60px 0;
+    text-align: center;
+}
+
+footer {
+    background: var(--background-color);
+    color: #6c757d;
+    text-align: center;
+    padding: 20px 0;
+    border-top: 1px solid #343a40;
+}
